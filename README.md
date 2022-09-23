@@ -5,5 +5,6 @@ Giorno 20/09/2022
   - Esercitazione for
 
 Giorno 21/09/2022
-  - Esercitazione Classi/Costruttori/Oggetti
+  - Esercitazione Classi/Costruttori/Oggetti Persona
+  
   
