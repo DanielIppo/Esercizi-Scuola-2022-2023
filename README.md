@@ -7,4 +7,5 @@ Giorno 20/09/2022
 Giorno 21/09/2022
   - Esercitazione Classi/Costruttori/Oggetti Persona
   
-  
+Giorno 24/09/2022
+  - Esercitazione Classi Immobile
