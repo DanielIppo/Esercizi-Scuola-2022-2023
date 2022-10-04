@@ -9,3 +9,6 @@ Giorno 21/09/2022
   
 Giorno 24/09/2022
   - Esercitazione Classi Immobile
+
+Giorno 04/10/2022
+  - Esercitazione Array
