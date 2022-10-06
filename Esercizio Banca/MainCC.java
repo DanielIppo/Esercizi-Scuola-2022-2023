@@ -1,7 +1,9 @@
+
 public class MainCC {
-    public static void main(String[] args) {
+    public static void main(String[] args){
         Banca banca = new Banca();
-        banca.saveSVG();
+        banca.uploadCSV();
+        banca.conti[0].deposita(100);
+        banca.conti[0].stampa();        
     }
 }
-//https://www.codejava.net/java-se/file-io/how-to-read-and-write-text-file-in-java
