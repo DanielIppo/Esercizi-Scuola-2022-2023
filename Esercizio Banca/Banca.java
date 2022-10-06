@@ -1,27 +1,39 @@
-import java.io.FileWriter;   // Import the FileWriter class
-import java.io.IOException;  // Import the IOException class to handle errors
+import java.io.*;
+import java.util.*;
 
 
 public class Banca {
-    ContoCorrente[] conti = new ContoCorrente[6]; {
-        conti[1] = new ContoCorrente("Mario Rossi", "IT123456789012345678901234", 1000);
-        conti[2] = new ContoCorrente("Luigi Bianchi", "IT123456789012345678901235", 2000);
-        conti[3] = new ContoCorrente("Giovanni Verdi", "IT123456789012345678901236", 3000);
-        conti[4] = new ContoCorrente("Giuseppe Neri", "IT123456789012345678901237", 4000);
-        conti[5] = new ContoCorrente("Antonio Gialli", "IT123456789012345678901238", 5000);
+    ContoCorrente[] conti = new ContoCorrente[1000]; {
+      new ContoCorrente("", "", 0);
     }
 
-    public void saveSVG(){
+    private String[] intestatario = new String[1000];
+    private String[] iban = new String[1000];
+    private double[] saldo = new double[1000];
+
+    public void uploadCSV() {
         try {
-            FileWriter myWriter = new FileWriter("conti.csv");
-            myWriter.write("");
-            myWriter.close();
-            System.out.println("Successfully wrote to the file.");
-          } catch (IOException e) {
-            System.out.println("An error occurred.");
+            File file = new File("esercizio Banca/conti.csv");
+            Scanner scanner = new Scanner(file);
+            int i = 0;
+            while (scanner.hasNextLine()) {
+                String line = scanner.nextLine();
+                String[] values = line.split(";");
+                conti[i] = new ContoCorrente(values[0], values[1], Double.parseDouble(values[2]));
+                i++;
+            }
+            scanner.close();
+        } catch (FileNotFoundException e) {
             e.printStackTrace();
-          }
+        }
     }
-
     
+    public void saveSVG() throws IOException{
+        try(FileWriter fileWriter = new FileWriter("conti.csv")) {
+            for (int i = 0; i < conti.length; i++) {
+                fileWriter.write(intestatario[i] + "," + iban[i] + "," + saldo[i] + "\n");
+            }
+        }
+      }
+        
 }
