@@ -8,6 +8,7 @@ public class ContoCorrente {
         this.saldo = saldo;
     }
 
+
     public void preleva(double importo) {
         if (importo > saldo) {
             System.out.println("Saldo insufficiente");
