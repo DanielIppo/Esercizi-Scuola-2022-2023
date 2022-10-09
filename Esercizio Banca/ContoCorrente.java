@@ -1,11 +1,13 @@
 public class ContoCorrente {
     public double saldo;
-    public String intestatario, iban;
+    public String nome, cognome, iban, password;
 
-    public ContoCorrente(String intestatario, String iban, double saldo) {
-        this.intestatario = intestatario;
+    public ContoCorrente(String nome, String cognome, String iban, String password, double saldo) {
+        this.nome = nome;
+        this.cognome = cognome;
         this.iban = iban;
         this.saldo = saldo;
+        this.password = password;
     }
 
 
@@ -22,8 +24,30 @@ public class ContoCorrente {
     }
 
     public void stampa() {
-        System.out.println("Intestatario: " + intestatario);
+        System.out.println("Intestatario: " + nome + " " + cognome);
         System.out.println("IBAN: " + iban);
         System.out.println("Saldo: " + saldo);
+    }
+
+
+    public String getNome() {
+        return this.nome;
+    }
+
+    public String getCognome() {
+        return this.cognome;
+    }
+
+    public String getIban() {
+        return this.iban;
+    }
+
+
+    public double getSaldo() {
+        return this.saldo;
+    }
+
+    public String getPassword() {
+        return this.password;
     }
 }
