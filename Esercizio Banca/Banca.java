@@ -1,39 +1,103 @@
-import java.io.*;
-import java.util.*;
+import java.util.Scanner;
 
+public class MainCC {
 
-public class Banca {
-    ContoCorrente[] conti = new ContoCorrente[1000]; {
-      new ContoCorrente("", "", 0);
+    public static void clearScreen(){
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
     }
 
-    private String[] intestatario = new String[1000];
-    private String[] iban = new String[1000];
-    private double[] saldo = new double[1000];
-
-    public void uploadCSV() {
+    public static void header(String header){
+        System.out.println("*********************************************************\n********************" + header + "********************\n*********************************************************\n");
+    }
+    
+    public static void sleep(int time){
         try {
-            File file = new File("esercizio Banca/conti.csv");
-            Scanner scanner = new Scanner(file);
-            int i = 0;
-            while (scanner.hasNextLine()) {
-                String line = scanner.nextLine();
-                String[] values = line.split(";");
-                conti[i] = new ContoCorrente(values[0], values[1], Double.parseDouble(values[2]));
-                i++;
-            }
-            scanner.close();
-        } catch (FileNotFoundException e) {
+            Thread.sleep(time);
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
-    
-    public void saveSVG() throws IOException{
-        try(FileWriter fileWriter = new FileWriter("conti.csv")) {
-            for (int i = 0; i < conti.length; i++) {
-                fileWriter.write(intestatario[i] + "," + iban[i] + "," + saldo[i] + "\n");
-            }
+
+    public static void main(String[] args){
+        Scanner in = new Scanner(System.in);
+        Banca banca = new Banca();
+
+        header("****  Login  ****");
+        System.out.print("Benvenuto in Banca\n\nEffettua il login per continuare:\nNome: ");
+        String nome = in.nextLine();
+        System.out.print("Password: ");
+        String password = in.nextLine();
+        banca.login(nome, password);   
+        if (banca.utenteI == -1) {
+            System.out.println("Login fallito, riprova..");
+            sleep(1000);
+            clearScreen();
+            main(args);
+            return;
         }
-      }
-        
+        sleep(1000);        
+        clearScreen(); 
+        header("****  Banca  ****");
+        while(true){
+            System.out.println("Benvenuto " + nome + "\n1. Visualizza Dati\n2. Deposita\n3. Preleva\n4. Bonifico\n5. Log Out\n6. Esci");
+            int scelta = in.nextInt();
+            switch (scelta) {
+                case 1:
+                    clearScreen();
+                    sleep(200);
+                    header("****  Dati  *****");
+                    System.out.println("Nome: " + banca.conti[banca.utenteI].nome + "\nCognome: " + banca.conti[banca.utenteI].cognome + "\nIBAN: " + banca.conti[banca.utenteI].iban + "\nSaldo: " + banca.conti[banca.utenteI].saldo);
+                    sleep(3000);
+                    break;
+                case 2:
+                    clearScreen();
+                    sleep(200);
+                    header("**  Deposita  ***");
+                    System.out.print("Importo: ");
+                    double importo = in.nextDouble();
+                    banca.conti[banca.utenteI].deposita(importo);
+                    break;
+                case 3:
+                    clearScreen();
+                    sleep(200);
+                    header("***  Preleva  ***");
+                    System.out.print("Importo: ");
+                    importo = in.nextDouble();
+                    banca.conti[banca.utenteI].preleva(importo);
+                    break;
+                case 4:
+                    clearScreen();
+                    sleep(200);
+                    header("**  Bonifico  ***");
+                    System.out.print("IBAN: ");
+                    String iban = in.next();
+                    System.out.print("Importo: ");
+                    importo = in.nextDouble();
+                    banca.bonifico(iban, importo);
+                    break;
+
+                case 5:
+                    clearScreen();
+                    sleep(200);
+                    header("***  Log Out  ***");
+                    banca.utenteI = -1;
+                    clearScreen();
+                    main(args);
+                    break;
+
+                case 6:
+                    clearScreen();
+                    sleep(200);
+                    banca.saveCSV("Esercizio Banca/conti.csv");
+                    System.out.println("Grazie per aver usato il nostro servizio");
+                    return;
+                default:
+                    System.out.println("Scelta non valida");
+                    break;
+            }
+            sleep(1000);
+            clearScreen();
+        }
+    }
 }
