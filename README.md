@@ -15,3 +15,6 @@ Giorno 04/10/2022
 
 Giorno 05/10/2022
   - Creazione Programma Banca, con GUI
+
+Giorno 14/10/2022
+  - Esercitazione con numeri
