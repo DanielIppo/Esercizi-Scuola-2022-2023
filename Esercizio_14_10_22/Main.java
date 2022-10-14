@@ -27,7 +27,7 @@ public class Main {
         double numero;
 
         while(true){
-            System.out.println("Cosa vuoi fare?\n1. Quadrato di un numero\n2. Radice di un numero\n3. Fattoriale di un numero\n4. Negazione di un numero\n5. Binaro o esadecimale");
+            System.out.println("Cosa vuoi fare?\n1. Quadrato di un numero\n2. Radice di un numero\n3. Fattoriale di un numero\n4. Negazione di un numero\n5. Incrementa di 1\n6. Decrementa di uno\n7. Risolvi un'equazione di secondo grado\n8. Binaro o esadecimale");
             int scelta = input.nextInt();
             switch(scelta){
                 case 1: 
@@ -44,6 +44,7 @@ public class Main {
                     System.out.println("La radice di " + numero + " è " + n.radice(numero));
                     sleep(2000);
                     clearScreen();
+
                 case 3:
                     clearScreen();
                     System.out.println("Inserisci il numero");
@@ -51,6 +52,7 @@ public class Main {
                     System.out.println("Il fattoriale di " + numero + " è " + n.fattoriale(numero));
                     sleep(2000);
                     clearScreen();
+
                 case 4:
                     clearScreen();
                     System.out.println("Inserisci il numero");
@@ -58,7 +60,37 @@ public class Main {
                     System.out.println("La negazione di " + numero + " è " + n.negazione(numero));
                     sleep(2000);
                     clearScreen();
+
                 case 5:
+                    clearScreen();
+                    System.out.println("Inserisci il numero");
+                    numero = input.nextInt();
+                    System.out.println("Il numero incrementato di 1 è " + n.incrementa(numero));
+                    sleep(2000);
+                    clearScreen();
+
+                case 6:
+                    clearScreen();
+                    System.out.println("Inserisci il numero");
+                    numero = input.nextInt();
+                    System.out.println("Il numero decrementato di 1 è " + n.decrementa(numero));
+                    sleep(2000);
+                    clearScreen();
+
+                case 7:
+                    clearScreen();
+                    System.out.print("Inserisci la tua a: ");
+                    double a = input.nextDouble();
+                    System.out.print("Inserisci la tua b: ");
+                    double b = input.nextDouble();
+                    System.out.print("Inserisci la tua c: ");
+                    double c = input.nextDouble();
+                    double[] equazione = n.equazione(a, b, c);
+                    System.out.println("Il tuo primo risultato è: " + equazione[0] + "\nIl tuo secondo risultato è: " + equazione[1]);
+                    sleep(5000);
+                    clearScreen();
+
+                case 8:
                     clearScreen();
                     System.out.println("Inserisci il numero");
                     numero = input.nextInt();
@@ -67,6 +99,7 @@ public class Main {
                     System.out.println("Il numero " + numero + " in " + sceltaBinEx + " è " + n.binEx(numero, sceltaBinEx));
                     sleep(2000);
                     clearScreen();
+
                 default:
                     clearScreen();
                     System.out.println("Scelta non valida");
