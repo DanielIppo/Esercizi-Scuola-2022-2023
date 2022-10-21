@@ -18,3 +18,6 @@ Giorno 05/10/2022
 
 Giorno 14/10/2022
   - Esercitazione con numeri
+  
+Giorno 21/10/2022
+  - Esercitazione metodi set() e get()
