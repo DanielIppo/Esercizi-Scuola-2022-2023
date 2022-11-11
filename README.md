@@ -21,3 +21,7 @@ Giorno 14/10/2022
   
 Giorno 21/10/2022
   - Esercitazione metodi set() e get()
+
+Giorno 11/11/2022
+  - Esercitazione try e catch
+  - Eserciatione classe immobile
