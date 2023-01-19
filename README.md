@@ -25,3 +25,7 @@ Giorno 21/10/2022
 Giorno 11/11/2022
   - Esercitazione try e catch
   - Eserciatione classe immobile
+
+Giorno 19/01/2023
+  - Creazione del gioco Tombola
+  
