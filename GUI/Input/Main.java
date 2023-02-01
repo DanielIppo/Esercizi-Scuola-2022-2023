@@ -11,11 +11,11 @@ public class Main extends JFrame {
         JPanel panel = new JPanel();
         panel.setBackground(Color.LIGHT_GRAY);
         add(panel);
-        JLabel label = new JLabel("Enter your name: ");
+        JLabel label = new JLabel("Inserisci il tuo nome: ");
         panel.add(label);
         inputField = new JTextField(10);
         panel.add(inputField);
-        JButton submitButton = new JButton("Submit");
+        JButton submitButton = new JButton("Conferma");
         submitButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 String name = inputField.getText();
