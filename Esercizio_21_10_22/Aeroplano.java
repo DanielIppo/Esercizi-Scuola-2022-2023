@@ -1,5 +1,3 @@
-package Esercizio_10_21_22;
-
 public class Aeroplano {
     private String nomeAereo;
     private int velocitaMassima, velocitaCrociera, nMotori;
