@@ -34,3 +34,6 @@ Giorno 01/02/2023
   
 Giorno 08/02/2023
   - Esercitazione con le classi abstaract, 2 esercizi
+
+Giorno 08/02/2023
+  - Creato il programma AgenziaImmobiliareGUI
