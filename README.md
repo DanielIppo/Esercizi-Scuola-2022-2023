@@ -29,3 +29,5 @@ Giorno 11/11/2022
 Giorno 19/01/2023
   - Creazione del gioco Tombola
   
+Giorno 08/02/2023
+  - Esercitazione con le classi abstaract, 2 esercizi
