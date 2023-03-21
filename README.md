@@ -1,0 +1,42 @@
+# Esercizi-Scuola-2022-2023
+Scrivo in java per la scuola
+
+Giorno 20/09/2022
+  - Esercitazione for
+
+Giorno 21/09/2022
+  - Esercitazione Classi/Costruttori/Oggetti Persona
+  
+Giorno 24/09/2022
+  - Esercitazione Classi Immobile
+
+Giorno 04/10/2022
+  - Esercitazione Array
+
+Giorno 05/10/2022
+  - Creazione Programma Banca, con GUI
+
+Giorno 14/10/2022
+  - Esercitazione con numeri
+  
+Giorno 21/10/2022
+  - Esercitazione metodi set() e get()
+
+Giorno 11/11/2022
+  - Esercitazione try e catch
+  - Eserciatione classe immobile
+
+Giorno 19/01/2023
+  - Creazione del gioco Tombola
+  
+Giorno 01/02/2023
+  - Eserrcitazione con le classi abstract
+  
+Giorno 08/02/2023
+  - Esercitazione con le classi abstaract, 2 esercizi
+
+Giorno 08/02/2023
+  - Creato il programma AgenziaImmobiliareGUI
+
+Giorno 21/03/2023
+  - Gestore Magazzino GUI
