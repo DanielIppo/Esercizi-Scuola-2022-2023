@@ -37,3 +37,6 @@ Giorno 08/02/2023
 
 Giorno 08/02/2023
   - Creato il programma AgenziaImmobiliareGUI
+
+Giorno 21/03/2023
+  - Gestore Magazzino GUI
